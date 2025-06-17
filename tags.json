@@ -1,0 +1,882 @@
+[
+  {
+    "id": 1,
+    "Tag": "accompanied"
+  },
+  {
+    "id": 2,
+    "Tag": "accused"
+  },
+  {
+    "id": 3,
+    "Tag": "achieved"
+  },
+  {
+    "id": 4,
+    "Tag": "achieving emissions"
+  },
+  {
+    "id": 5,
+    "Tag": "acted"
+  },
+  {
+    "id": 6,
+    "Tag": "adding"
+  },
+  {
+    "id": 7,
+    "Tag": "affected thousands"
+  },
+  {
+    "id": 8,
+    "Tag": "aimed"
+  },
+  {
+    "id": 9,
+    "Tag": "aims"
+  },
+  {
+    "id": 10,
+    "Tag": "alleged"
+  },
+  {
+    "id": 11,
+    "Tag": "announced"
+  },
+  {
+    "id": 12,
+    "Tag": "appear"
+  },
+  {
+    "id": 13,
+    "Tag": "appeared"
+  },
+  {
+    "id": 14,
+    "Tag": "appears"
+  },
+  {
+    "id": 15,
+    "Tag": "apprehended"
+  },
+  {
+    "id": 16,
+    "Tag": "approved"
+  },
+  {
+    "id": 17,
+    "Tag": "arrested"
+  },
+  {
+    "id": 18,
+    "Tag": "arrive"
+  },
+  {
+    "id": 19,
+    "Tag": "asked"
+  },
+  {
+    "id": 20,
+    "Tag": "asks"
+  },
+  {
+    "id": 21,
+    "Tag": "attack iran"
+  },
+  {
+    "id": 22,
+    "Tag": "attacked"
+  },
+  {
+    "id": 23,
+    "Tag": "attacked iran"
+  },
+  {
+    "id": 24,
+    "Tag": "attacked israel"
+  },
+  {
+    "id": 25,
+    "Tag": "attend summit"
+  },
+  {
+    "id": 26,
+    "Tag": "attending"
+  },
+  {
+    "id": 27,
+    "Tag": "began"
+  },
+  {
+    "id": 28,
+    "Tag": "begin"
+  },
+  {
+    "id": 29,
+    "Tag": "begins"
+  },
+  {
+    "id": 30,
+    "Tag": "bound"
+  },
+  {
+    "id": 31,
+    "Tag": "breaking"
+  },
+  {
+    "id": 32,
+    "Tag": "bring relief"
+  },
+  {
+    "id": 33,
+    "Tag": "broken"
+  },
+  {
+    "id": 34,
+    "Tag": "campaigned"
+  },
+  {
+    "id": 35,
+    "Tag": "carried"
+  },
+  {
+    "id": 36,
+    "Tag": "caught"
+  },
+  {
+    "id": 37,
+    "Tag": "caused"
+  },
+  {
+    "id": 38,
+    "Tag": "celebrated"
+  },
+  {
+    "id": 39,
+    "Tag": "claimed"
+  },
+  {
+    "id": 40,
+    "Tag": "claimed lives"
+  },
+  {
+    "id": 41,
+    "Tag": "claims"
+  },
+  {
+    "id": 42,
+    "Tag": "closed"
+  },
+  {
+    "id": 43,
+    "Tag": "coinciding"
+  },
+  {
+    "id": 44,
+    "Tag": "collapses"
+  },
+  {
+    "id": 45,
+    "Tag": "committed"
+  },
+  {
+    "id": 46,
+    "Tag": "concluded"
+  },
+  {
+    "id": 47,
+    "Tag": "condemning strikes"
+  },
+  {
+    "id": 48,
+    "Tag": "conducted"
+  },
+  {
+    "id": 49,
+    "Tag": "confirmed"
+  },
+  {
+    "id": 50,
+    "Tag": "crash"
+  },
+  {
+    "id": 51,
+    "Tag": "crashed"
+  },
+  {
+    "id": 52,
+    "Tag": "crashes"
+  },
+  {
+    "id": 53,
+    "Tag": "damaged"
+  },
+  {
+    "id": 54,
+    "Tag": "declared emergency"
+  },
+  {
+    "id": 55,
+    "Tag": "declined"
+  },
+  {
+    "id": 56,
+    "Tag": "delayed"
+  },
+  {
+    "id": 57,
+    "Tag": "described"
+  },
+  {
+    "id": 58,
+    "Tag": "detained"
+  },
+  {
+    "id": 59,
+    "Tag": "die"
+  },
+  {
+    "id": 60,
+    "Tag": "died"
+  },
+  {
+    "id": 61,
+    "Tag": "dies"
+  },
+  {
+    "id": 62,
+    "Tag": "discovered"
+  },
+  {
+    "id": 63,
+    "Tag": "dispatched teams"
+  },
+  {
+    "id": 64,
+    "Tag": "distanced"
+  },
+  {
+    "id": 65,
+    "Tag": "dominated"
+  },
+  {
+    "id": 66,
+    "Tag": "driven"
+  },
+  {
+    "id": 67,
+    "Tag": "drop policies"
+  },
+  {
+    "id": 68,
+    "Tag": "embarking"
+  },
+  {
+    "id": 69,
+    "Tag": "emerged"
+  },
+  {
+    "id": 70,
+    "Tag": "emphasised importance"
+  },
+  {
+    "id": 71,
+    "Tag": "engaging"
+  },
+  {
+    "id": 72,
+    "Tag": "escalating"
+  },
+  {
+    "id": 73,
+    "Tag": "escalating tensions"
+  },
+  {
+    "id": 74,
+    "Tag": "executed"
+  },
+  {
+    "id": 75,
+    "Tag": "expect"
+  },
+  {
+    "id": 76,
+    "Tag": "expected"
+  },
+  {
+    "id": 77,
+    "Tag": "explained"
+  },
+  {
+    "id": 78,
+    "Tag": "extended"
+  },
+  {
+    "id": 79,
+    "Tag": "failed"
+  },
+  {
+    "id": 80,
+    "Tag": "falling"
+  },
+  {
+    "id": 81,
+    "Tag": "feared"
+  },
+  {
+    "id": 82,
+    "Tag": "fight"
+  },
+  {
+    "id": 83,
+    "Tag": "fired"
+  },
+  {
+    "id": 84,
+    "Tag": "flying"
+  },
+  {
+    "id": 85,
+    "Tag": "followed"
+  },
+  {
+    "id": 86,
+    "Tag": "following"
+  },
+  {
+    "id": 87,
+    "Tag": "forecasting showers"
+  },
+  {
+    "id": 88,
+    "Tag": "grieving"
+  },
+  {
+    "id": 89,
+    "Tag": "growing"
+  },
+  {
+    "id": 90,
+    "Tag": "handed"
+  },
+  {
+    "id": 91,
+    "Tag": "happen"
+  },
+  {
+    "id": 92,
+    "Tag": "happened"
+  },
+  {
+    "id": 93,
+    "Tag": "happening"
+  },
+  {
+    "id": 94,
+    "Tag": "headed"
+  },
+  {
+    "id": 95,
+    "Tag": "held"
+  },
+  {
+    "id": 96,
+    "Tag": "helped"
+  },
+  {
+    "id": 97,
+    "Tag": "hiding"
+  },
+  {
+    "id": 98,
+    "Tag": "hit sites"
+  },
+  {
+    "id": 99,
+    "Tag": "holds parade"
+  },
+  {
+    "id": 100,
+    "Tag": "honoured"
+  },
+  {
+    "id": 101,
+    "Tag": "identified"
+  },
+  {
+    "id": 102,
+    "Tag": "increased"
+  },
+  {
+    "id": 103,
+    "Tag": "increasing"
+  },
+  {
+    "id": 104,
+    "Tag": "inflicted damage"
+  },
+  {
+    "id": 105,
+    "Tag": "injured"
+  },
+  {
+    "id": 106,
+    "Tag": "injuring"
+  },
+  {
+    "id": 107,
+    "Tag": "inspiring"
+  },
+  {
+    "id": 108,
+    "Tag": "invited"
+  },
+  {
+    "id": 109,
+    "Tag": "involved"
+  },
+  {
+    "id": 110,
+    "Tag": "killed"
+  },
+  {
+    "id": 111,
+    "Tag": "kin"
+  },
+  {
+    "id": 112,
+    "Tag": "know"
+  },
+  {
+    "id": 113,
+    "Tag": "known"
+  },
+  {
+    "id": 114,
+    "Tag": "launched wave"
+  },
+  {
+    "id": 115,
+    "Tag": "leading"
+  },
+  {
+    "id": 116,
+    "Tag": "leave"
+  },
+  {
+    "id": 117,
+    "Tag": "led"
+  },
+  {
+    "id": 118,
+    "Tag": "led africa"
+  },
+  {
+    "id": 119,
+    "Tag": "left"
+  },
+  {
+    "id": 120,
+    "Tag": "linked"
+  },
+  {
+    "id": 121,
+    "Tag": "live"
+  },
+  {
+    "id": 122,
+    "Tag": "look"
+  },
+  {
+    "id": 123,
+    "Tag": "looking"
+  },
+  {
+    "id": 124,
+    "Tag": "looks"
+  },
+  {
+    "id": 125,
+    "Tag": "lost"
+  },
+  {
+    "id": 126,
+    "Tag": "loved"
+  },
+  {
+    "id": 127,
+    "Tag": "marking anniversary"
+  },
+  {
+    "id": 128,
+    "Tag": "meet"
+  },
+  {
+    "id": 129,
+    "Tag": "meet needs"
+  },
+  {
+    "id": 130,
+    "Tag": "missed"
+  },
+  {
+    "id": 131,
+    "Tag": "missing"
+  },
+  {
+    "id": 132,
+    "Tag": "modi"
+  },
+  {
+    "id": 133,
+    "Tag": "owing"
+  },
+  {
+    "id": 134,
+    "Tag": "passes"
+  },
+  {
+    "id": 135,
+    "Tag": "picked"
+  },
+  {
+    "id": 136,
+    "Tag": "planned"
+  },
+  {
+    "id": 137,
+    "Tag": "plans"
+  },
+  {
+    "id": 138,
+    "Tag": "play role"
+  },
+  {
+    "id": 139,
+    "Tag": "preparing"
+  },
+  {
+    "id": 140,
+    "Tag": "prolonged"
+  },
+  {
+    "id": 141,
+    "Tag": "protected"
+  },
+  {
+    "id": 142,
+    "Tag": "protest"
+  },
+  {
+    "id": 143,
+    "Tag": "provide payment"
+  },
+  {
+    "id": 144,
+    "Tag": "pushed"
+  },
+  {
+    "id": 145,
+    "Tag": "questioned"
+  },
+  {
+    "id": 146,
+    "Tag": "rained"
+  },
+  {
+    "id": 147,
+    "Tag": "raising concerns"
+  },
+  {
+    "id": 148,
+    "Tag": "ranked"
+  },
+  {
+    "id": 149,
+    "Tag": "reached"
+  },
+  {
+    "id": 150,
+    "Tag": "received"
+  },
+  {
+    "id": 151,
+    "Tag": "recorded"
+  },
+  {
+    "id": 152,
+    "Tag": "recovered"
+  },
+  {
+    "id": 153,
+    "Tag": "related"
+  },
+  {
+    "id": 154,
+    "Tag": "relying"
+  },
+  {
+    "id": 155,
+    "Tag": "remain"
+  },
+  {
+    "id": 156,
+    "Tag": "remains"
+  },
+  {
+    "id": 157,
+    "Tag": "renewed"
+  },
+  {
+    "id": 158,
+    "Tag": "restricted"
+  },
+  {
+    "id": 159,
+    "Tag": "resulted"
+  },
+  {
+    "id": 160,
+    "Tag": "retaliated"
+  },
+  {
+    "id": 161,
+    "Tag": "retaliates"
+  },
+  {
+    "id": 162,
+    "Tag": "retrieved"
+  },
+  {
+    "id": 163,
+    "Tag": "reveal"
+  },
+  {
+    "id": 164,
+    "Tag": "revealed"
+  },
+  {
+    "id": 165,
+    "Tag": "rise"
+  },
+  {
+    "id": 166,
+    "Tag": "rises"
+  },
+  {
+    "id": 167,
+    "Tag": "rising"
+  },
+  {
+    "id": 168,
+    "Tag": "run"
+  },
+  {
+    "id": 169,
+    "Tag": "running"
+  },
+  {
+    "id": 170,
+    "Tag": "rushed"
+  },
+  {
+    "id": 171,
+    "Tag": "scheduled"
+  },
+  {
+    "id": 172,
+    "Tag": "searched"
+  },
+  {
+    "id": 173,
+    "Tag": "searching"
+  },
+  {
+    "id": 174,
+    "Tag": "secure release"
+  },
+  {
+    "id": 175,
+    "Tag": "seized"
+  },
+  {
+    "id": 176,
+    "Tag": "sentenced"
+  },
+  {
+    "id": 177,
+    "Tag": "served"
+  },
+  {
+    "id": 178,
+    "Tag": "set"
+  },
+  {
+    "id": 179,
+    "Tag": "shaken"
+  },
+  {
+    "id": 180,
+    "Tag": "shot"
+  },
+  {
+    "id": 181,
+    "Tag": "shouting"
+  },
+  {
+    "id": 182,
+    "Tag": "sign"
+  },
+  {
+    "id": 183,
+    "Tag": "signed"
+  },
+  {
+    "id": 184,
+    "Tag": "soar"
+  },
+  {
+    "id": 185,
+    "Tag": "sounded alert"
+  },
+  {
+    "id": 186,
+    "Tag": "speak"
+  },
+  {
+    "id": 187,
+    "Tag": "spoke"
+  },
+  {
+    "id": 188,
+    "Tag": "spoken"
+  },
+  {
+    "id": 189,
+    "Tag": "spread"
+  },
+  {
+    "id": 190,
+    "Tag": "standing"
+  },
+  {
+    "id": 191,
+    "Tag": "start"
+  },
+  {
+    "id": 192,
+    "Tag": "started"
+  },
+  {
+    "id": 193,
+    "Tag": "starting"
+  },
+  {
+    "id": 194,
+    "Tag": "stated"
+  },
+  {
+    "id": 195,
+    "Tag": "stay indoors"
+  },
+  {
+    "id": 196,
+    "Tag": "stop"
+  },
+  {
+    "id": 197,
+    "Tag": "stranded"
+  },
+  {
+    "id": 198,
+    "Tag": "struck"
+  },
+  {
+    "id": 199,
+    "Tag": "struggling"
+  },
+  {
+    "id": 200,
+    "Tag": "stuck"
+  },
+  {
+    "id": 201,
+    "Tag": "submit"
+  },
+  {
+    "id": 202,
+    "Tag": "suspected"
+  },
+  {
+    "id": 203,
+    "Tag": "sweltering heat watch"
+  },
+  {
+    "id": 204,
+    "Tag": "targeted"
+  },
+  {
+    "id": 205,
+    "Tag": "targeting infrastructure"
+  },
+  {
+    "id": 206,
+    "Tag": "travel"
+  },
+  {
+    "id": 207,
+    "Tag": "turn"
+  },
+  {
+    "id": 208,
+    "Tag": "turned"
+  },
+  {
+    "id": 209,
+    "Tag": "understand"
+  },
+  {
+    "id": 210,
+    "Tag": "unveiled schedule"
+  },
+  {
+    "id": 211,
+    "Tag": "urged"
+  },
+  {
+    "id": 212,
+    "Tag": "wait"
+  },
+  {
+    "id": 213,
+    "Tag": "waiting"
+  },
+  {
+    "id": 214,
+    "Tag": "walked"
+  },
+  {
+    "id": 215,
+    "Tag": "warn"
+  },
+  {
+    "id": 216,
+    "Tag": "warned"
+  },
+  {
+    "id": 217,
+    "Tag": "watch"
+  },
+  {
+    "id": 218,
+    "Tag": "work"
+  },
+  {
+    "id": 219,
+    "Tag": "working"
+  },
+  {
+    "id": 220,
+    "Tag": "wounded"
+  }
+]
