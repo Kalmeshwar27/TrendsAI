@@ -41,7 +41,7 @@ def get_all_data():
 def get_articles_by_tag(tag_name):
     filtered = [
         article for article in article_data
-        if article.get("Verb Phrase", "").lower() == tag_name.lower()
+        if article.get("Keywords", "").lower() == tag_name.lower()
     ]
     if not filtered:
         return jsonify({"message": f"No articles found for tag '{tag_name}'"}), 404
