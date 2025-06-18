@@ -56,5 +56,9 @@ def get_articles_by_tag_id(tag_id):
     return get_articles_by_tag(tag_name)
 
 # Run the app
+# Run the app
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
