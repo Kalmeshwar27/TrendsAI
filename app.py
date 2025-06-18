@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 import json
-
+from flask import Response
 app = Flask(__name__)
 
 # Load data files once at startup
@@ -29,7 +29,7 @@ def home():
 # Get all tags
 @app.route("/tags", methods=["GET"])
 def get_tags():
-    return jsonify(tags_data)
+    return Response(json.dumps(tags_data, indent=2), mimetype="application/json")
 
 # Get all articles
 @app.route("/data", methods=["GET"])
