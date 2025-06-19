@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"] # Minimum setuptools version that supports pyproject.toml
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trends-ai-api" # Replace with your desired package name
+version = "0.1.0"      # Your project's version
+description = "A Flask API for TrendsAI project"
+readme = "README.md"   # If you have a README file
+requires-python = ">=3.8" # Minimum Python version required
+dependencies = [
+    "Flask",
+    # Add any other direct dependencies of your Flask app here, e.g.:
+    # "gunicorn",
+    # "requests",
+    # "pandas",
+]
+
+# Optional: If your main Flask app is within a subfolder like 'trends_ai'
+# [tool.setuptools.packages.find]
+# where = ["."] # Search for packages in the current directory
+# include = ["trends_ai*"] # Specify your main package folder name
+
+# Optional: If you want to define scripts that can be run after installation
+# [project.scripts]
+# trends-api = "your_main_module:app" # Replace with your actual entry point
