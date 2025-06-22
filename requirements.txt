@@ -3,3 +3,4 @@ Flask-Limiter==2.6.3
 Flask-Session==0.4.0
 flask-swagger==0.2.14
 flask-swagger-ui==4.11.1
+flask-cors==3.0.10
