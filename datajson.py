@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Load Excel
-df = pd.read_excel("data-1.xlsx")
+df = pd.read_excel("data-2.xlsx")
 
 # Clean column names
 df.columns = df.columns.str.strip()

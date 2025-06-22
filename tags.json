@@ -5,458 +5,158 @@
   },
   {
     "id": 2,
-    "Tag": "affected"
+    "Tag": "aiming"
   },
   {
     "id": 3,
-    "Tag": "agree"
+    "Tag": "alleged"
   },
   {
     "id": 4,
-    "Tag": "agreed"
+    "Tag": "attack"
   },
   {
     "id": 5,
-    "Tag": "aim"
+    "Tag": "boyfriend"
   },
   {
     "id": 6,
-    "Tag": "aims"
+    "Tag": "carrying students"
   },
   {
     "id": 7,
-    "Tag": "alleges"
+    "Tag": "claim"
   },
   {
     "id": 8,
-    "Tag": "allowed"
+    "Tag": "cuts"
   },
   {
     "id": 9,
-    "Tag": "announced"
+    "Tag": "damaged"
   },
   {
     "id": 10,
-    "Tag": "appointed"
-  },
-  {
-    "id": 11,
-    "Tag": "arrested"
-  },
-  {
-    "id": 12,
-    "Tag": "asked"
-  },
-  {
-    "id": 13,
-    "Tag": "attempted"
-  },
-  {
-    "id": 14,
-    "Tag": "began"
-  },
-  {
-    "id": 15,
-    "Tag": "believe"
-  },
-  {
-    "id": 16,
-    "Tag": "bound"
-  },
-  {
-    "id": 17,
-    "Tag": "breaking"
-  },
-  {
-    "id": 18,
-    "Tag": "built"
-  },
-  {
-    "id": 19,
-    "Tag": "cancelled"
-  },
-  {
-    "id": 20,
-    "Tag": "caught"
-  },
-  {
-    "id": 21,
-    "Tag": "caused"
-  },
-  {
-    "id": 22,
-    "Tag": "consider"
-  },
-  {
-    "id": 23,
-    "Tag": "crashed"
-  },
-  {
-    "id": 24,
-    "Tag": "decided"
-  },
-  {
-    "id": 25,
-    "Tag": "declares"
-  },
-  {
-    "id": 26,
-    "Tag": "denied"
-  },
-  {
-    "id": 27,
-    "Tag": "deployed"
-  },
-  {
-    "id": 28,
-    "Tag": "designed"
-  },
-  {
-    "id": 29,
-    "Tag": "detained"
-  },
-  {
-    "id": 30,
     "Tag": "died"
   },
   {
-    "id": 31,
-    "Tag": "diverted"
+    "id": 11,
+    "Tag": "duped"
   },
   {
-    "id": 32,
-    "Tag": "emerging"
+    "id": 12,
+    "Tag": "end conflict"
   },
   {
-    "id": 33,
-    "Tag": "emphasizing"
+    "id": 13,
+    "Tag": "evacuated"
   },
   {
-    "id": 34,
-    "Tag": "enhance cooperation"
-  },
-  {
-    "id": 35,
-    "Tag": "ensure"
-  },
-  {
-    "id": 36,
-    "Tag": "erupted"
-  },
-  {
-    "id": 37,
-    "Tag": "escalate"
-  },
-  {
-    "id": 38,
-    "Tag": "escalating"
-  },
-  {
-    "id": 39,
-    "Tag": "expected"
-  },
-  {
-    "id": 40,
-    "Tag": "extend deadline"
-  },
-  {
-    "id": 41,
-    "Tag": "failed"
-  },
-  {
-    "id": 42,
-    "Tag": "fall"
-  },
-  {
-    "id": 43,
-    "Tag": "finds"
-  },
-  {
-    "id": 44,
-    "Tag": "focus"
-  },
-  {
-    "id": 45,
-    "Tag": "focused"
-  },
-  {
-    "id": 46,
-    "Tag": "focusing"
-  },
-  {
-    "id": 47,
+    "id": 14,
     "Tag": "following"
   },
   {
-    "id": 48,
-    "Tag": "grooming"
-  },
-  {
-    "id": 49,
-    "Tag": "grounded"
-  },
-  {
-    "id": 50,
+    "id": 15,
     "Tag": "growing"
   },
   {
-    "id": 51,
-    "Tag": "handcuffed"
-  },
-  {
-    "id": 52,
-    "Tag": "happened"
-  },
-  {
-    "id": 53,
+    "id": 16,
     "Tag": "held"
   },
   {
-    "id": 54,
-    "Tag": "help"
+    "id": 17,
+    "Tag": "hinted"
   },
   {
-    "id": 55,
-    "Tag": "highlight priorities"
+    "id": 18,
+    "Tag": "increased"
   },
   {
-    "id": 56,
-    "Tag": "hit"
-  },
-  {
-    "id": 57,
-    "Tag": "hits"
-  },
-  {
-    "id": 58,
-    "Tag": "injured"
-  },
-  {
-    "id": 59,
-    "Tag": "insisted"
-  },
-  {
-    "id": 60,
-    "Tag": "intervene"
-  },
-  {
-    "id": 61,
-    "Tag": "involved"
-  },
-  {
-    "id": 62,
+    "id": 19,
     "Tag": "killed"
   },
   {
-    "id": 63,
-    "Tag": "know"
+    "id": 20,
+    "Tag": "known"
   },
   {
-    "id": 64,
+    "id": 21,
+    "Tag": "knows"
+  },
+  {
+    "id": 22,
+    "Tag": "lead"
+  },
+  {
+    "id": 23,
     "Tag": "leading"
   },
   {
-    "id": 65,
-    "Tag": "leave israel"
-  },
-  {
-    "id": 66,
-    "Tag": "leaves"
-  },
-  {
-    "id": 67,
+    "id": 24,
     "Tag": "led"
   },
   {
-    "id": 68,
-    "Tag": "live"
+    "id": 25,
+    "Tag": "left"
   },
   {
-    "id": 69,
-    "Tag": "masked"
+    "id": 26,
+    "Tag": "means"
   },
   {
-    "id": 70,
-    "Tag": "meet"
-  },
-  {
-    "id": 71,
-    "Tag": "meets carney"
-  },
-  {
-    "id": 72,
-    "Tag": "modi"
-  },
-  {
-    "id": 73,
+    "id": 27,
     "Tag": "occurred"
   },
   {
-    "id": 74,
-    "Tag": "participate"
-  },
-  {
-    "id": 75,
-    "Tag": "plans"
-  },
-  {
-    "id": 76,
-    "Tag": "proposed"
-  },
-  {
-    "id": 77,
-    "Tag": "protected"
-  },
-  {
-    "id": 78,
-    "Tag": "protest"
-  },
-  {
-    "id": 79,
-    "Tag": "pushed"
-  },
-  {
-    "id": 80,
-    "Tag": "recorded"
-  },
-  {
-    "id": 81,
-    "Tag": "released"
-  },
-  {
-    "id": 82,
-    "Tag": "remain"
-  },
-  {
-    "id": 83,
-    "Tag": "resulted"
-  },
-  {
-    "id": 84,
-    "Tag": "return"
-  },
-  {
-    "id": 85,
-    "Tag": "rising"
-  },
-  {
-    "id": 86,
-    "Tag": "ruled"
-  },
-  {
-    "id": 87,
-    "Tag": "run"
-  },
-  {
-    "id": 88,
-    "Tag": "running"
-  },
-  {
-    "id": 89,
-    "Tag": "send workers"
-  },
-  {
-    "id": 90,
+    "id": 28,
     "Tag": "set"
   },
   {
-    "id": 91,
-    "Tag": "shared"
-  },
-  {
-    "id": 92,
-    "Tag": "shot"
-  },
-  {
-    "id": 93,
-    "Tag": "sign"
-  },
-  {
-    "id": 94,
-    "Tag": "speaks"
-  },
-  {
-    "id": 95,
+    "id": 29,
     "Tag": "spoke"
   },
   {
-    "id": 96,
-    "Tag": "stated"
+    "id": 30,
+    "Tag": "step"
   },
   {
-    "id": 97,
-    "Tag": "stay"
+    "id": 31,
+    "Tag": "stopped war"
   },
   {
-    "id": 98,
-    "Tag": "stuck"
+    "id": 32,
+    "Tag": "surrender"
   },
   {
-    "id": 99,
+    "id": 33,
     "Tag": "suspended"
   },
   {
-    "id": 100,
-    "Tag": "targeted"
+    "id": 34,
+    "Tag": "suspending adgp"
   },
   {
-    "id": 101,
-    "Tag": "tells"
-  },
-  {
-    "id": 102,
-    "Tag": "thug"
-  },
-  {
-    "id": 103,
-    "Tag": "tied"
-  },
-  {
-    "id": 104,
-    "Tag": "treated"
-  },
-  {
-    "id": 105,
-    "Tag": "trump"
-  },
-  {
-    "id": 106,
+    "id": 35,
     "Tag": "try"
   },
   {
-    "id": 107,
-    "Tag": "urged"
+    "id": 36,
+    "Tag": "visit"
   },
   {
-    "id": 108,
-    "Tag": "want"
+    "id": 37,
+    "Tag": "wanted"
   },
   {
-    "id": 109,
-    "Tag": "wanting"
-  },
-  {
-    "id": 110,
-    "Tag": "wants"
-  },
-  {
-    "id": 111,
-    "Tag": "warn"
-  },
-  {
-    "id": 112,
-    "Tag": "warned"
-  },
-  {
-    "id": 113,
+    "id": 38,
     "Tag": "warns"
   },
   {
-    "id": 114,
+    "id": 39,
     "Tag": "watch"
   },
   {
-    "id": 115,
+    "id": 40,
     "Tag": "working"
   }
 ]

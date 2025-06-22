@@ -1,0 +1,11 @@
+pyproject.toml
+trends_ai/__init__.py
+trends_ai/app.py
+trends_ai/data.py
+trends_ai/datajson.py
+trends_ai/tags.py
+trends_ai_api.egg-info/PKG-INFO
+trends_ai_api.egg-info/SOURCES.txt
+trends_ai_api.egg-info/dependency_links.txt
+trends_ai_api.egg-info/requires.txt
+trends_ai_api.egg-info/top_level.txt
