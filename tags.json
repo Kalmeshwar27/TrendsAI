@@ -1,162 +1,42 @@
 [
   {
     "id": 1,
-    "Tag": "accused"
-  },
-  {
-    "id": 2,
-    "Tag": "aiming"
-  },
-  {
-    "id": 3,
-    "Tag": "alleged"
-  },
-  {
-    "id": 4,
-    "Tag": "attack"
-  },
-  {
-    "id": 5,
-    "Tag": "boyfriend"
-  },
-  {
-    "id": 6,
-    "Tag": "carrying students"
-  },
-  {
-    "id": 7,
-    "Tag": "claim"
-  },
-  {
-    "id": 8,
-    "Tag": "cuts"
-  },
-  {
-    "id": 9,
-    "Tag": "damaged"
-  },
-  {
-    "id": 10,
-    "Tag": "died"
-  },
-  {
-    "id": 11,
-    "Tag": "duped"
-  },
-  {
-    "id": 12,
-    "Tag": "end conflict"
-  },
-  {
-    "id": 13,
-    "Tag": "evacuated"
-  },
-  {
-    "id": 14,
-    "Tag": "following"
-  },
-  {
-    "id": 15,
-    "Tag": "growing"
-  },
-  {
-    "id": 16,
-    "Tag": "held"
-  },
-  {
-    "id": 17,
-    "Tag": "hinted"
-  },
-  {
-    "id": 18,
-    "Tag": "increased"
-  },
-  {
-    "id": 19,
-    "Tag": "killed"
-  },
-  {
-    "id": 20,
-    "Tag": "known"
-  },
-  {
-    "id": 21,
-    "Tag": "knows"
-  },
-  {
-    "id": 22,
-    "Tag": "lead"
-  },
-  {
-    "id": 23,
     "Tag": "leading"
   },
   {
-    "id": 24,
-    "Tag": "led"
+    "id": 2,
+    "Tag": "carrying students"
   },
   {
-    "id": 25,
-    "Tag": "left"
+    "id": 3,
+    "Tag": "end conflict"
   },
   {
-    "id": 26,
+    "id": 4,
     "Tag": "means"
   },
   {
-    "id": 27,
-    "Tag": "occurred"
+    "id": 5,
+    "Tag": "killed"
   },
   {
-    "id": 28,
-    "Tag": "set"
+    "id": 6,
+    "Tag": "growing"
   },
   {
-    "id": 29,
-    "Tag": "spoke"
+    "id": 7,
+    "Tag": "lead"
   },
   {
-    "id": 30,
-    "Tag": "step"
+    "id": 8,
+    "Tag": "claim"
   },
   {
-    "id": 31,
-    "Tag": "stopped war"
-  },
-  {
-    "id": 32,
+    "id": 9,
     "Tag": "surrender"
   },
   {
-    "id": 33,
-    "Tag": "suspended"
-  },
-  {
-    "id": 34,
-    "Tag": "suspending adgp"
-  },
-  {
-    "id": 35,
-    "Tag": "try"
-  },
-  {
-    "id": 36,
-    "Tag": "visit"
-  },
-  {
-    "id": 37,
-    "Tag": "wanted"
-  },
-  {
-    "id": 38,
-    "Tag": "warns"
-  },
-  {
-    "id": 39,
-    "Tag": "watch"
-  },
-  {
-    "id": 40,
-    "Tag": "working"
+    "id": 10,
+    "Tag": "held"
   }
 ]

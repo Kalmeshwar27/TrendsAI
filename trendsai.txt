@@ -1,0 +1,243 @@
+import feedparser
+import re
+import spacy
+import time
+import torch
+from datetime import datetime, timedelta
+from urllib.parse import urlparse
+from collections import defaultdict, Counter
+from transformers import pipeline
+from openpyxl import Workbook
+from openpyxl.styles import Font
+from concurrent.futures import ThreadPoolExecutor
+from tqdm import tqdm  # Make sure tqdm is imported
+
+
+print("✅ Loading models and resources...")
+processed_articles = set()
+
+# Load NLP tools
+nlp = spacy.load("en_core_web_sm")
+stop_words = nlp.Defaults.stop_words
+blacklist = stop_words.union({
+    "said", "will", "news", "india", "today", "report", "year", "week", "also", "time",
+    "many", "more", "from", "about", "could", "back", "out", "into", "minister", "government",
+    "officials", "party", "member", "states", "people", "country", "nation", "issue", "media",
+    "world", "video", "audio", "language", "chilli", "pope", "explore", "powder", "every",
+    "month", "daily", "newsroom", "click", "read", "update", "headline", "according","continue",
+    "including","found","based","comes","come","told","suggest","trying","regarding",
+    "need","except","gathered","let","following","know","expected","alleged"
+})
+
+# Load fast models
+device = 0 if torch.cuda.is_available() else -1
+summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum", device=device)
+classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", device=device)
+
+# Caches
+summary_cache = {}
+category_cache = {}
+
+# RSS Feeds
+rss_feeds = [
+    "https://www.thehindu.com/news/national/feeder/default.rss",
+    "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    "https://www.livemint.com/rss/news",
+    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "http://feeds.bbci.co.uk/news/world/rss.xml",
+    "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+    "https://www.aljazeera.com/xml/rss/all.xml",
+    "https://www.theguardian.com/world/rss",  
+    "https://indianexpress.com/feed/",
+    "https://www.france24.com/en/rss",
+    "https://feeds.skynews.com/feeds/rss/home.xml",  
+    "https://moxie.foxnews.com/feedburner/latest.xml",
+    "https://feeds.feedburner.com/ndtvnews-top-stories",
+    "https://news.google.com/news/rss?hl=en-IN&gl=IN&ceid=IN:en",
+    "https://www.indiatoday.in/rss/home",
+    "https://www.abc.net.au/news/feed/51120/rss.xml",
+    "http://rss.cnn.com/rss/cnn_topstories.rss"
+]
+
+# Time filtering
+now = datetime.utcnow()
+time_limit = now - timedelta(days=15)
+phrase_to_articles = defaultdict(list)
+global_phrase_counter = Counter()
+seen_phrase_order = []
+
+def clean_html(text):
+    return re.sub(r"<[^>]+>", "", text)
+
+def extract_verb_phrases(text):
+    doc = nlp(text)
+    phrases = []
+    for token in doc:
+        if token.pos_ == "VERB" and token.lemma_.lower() not in blacklist:
+            components = [token.text]
+            for child in token.children:
+                if child.dep_ in ("dobj", "acomp") and child.text.lower() not in blacklist:
+                    components.append(child.text)
+            phrase = " ".join(components).lower()
+            if phrase and all(word.isalpha() for word in phrase.split()) and not any(word in blacklist for word in phrase.split()):
+                phrases.append(phrase)
+    return phrases
+
+def extract_nouns(text):
+    doc = nlp(text)
+    nouns = []
+    for token in doc:
+        if token.pos_ == "NOUN" and token.lemma_.lower() not in blacklist and len(token.text) > 3:
+            noun = token.text.lower()
+            if noun.isalpha():
+                nouns.append(noun)
+    return nouns
+
+def generate_summary(text):
+    text = clean_html(text)
+    short_text = " ".join(text.split()[:500])
+    if text in summary_cache:
+        return summary_cache[text]
+    try:
+        result = summarizer(short_text, max_length=45, min_length=10, do_sample=False)
+        summary = result[0]['summary_text'].strip()
+        summary_cache[text] = summary
+        return summary
+    except:
+        return short_text
+
+def classify_article(title, description):
+    text = f"{title}. {description}"
+    if text in category_cache:
+        return category_cache[text]
+    try:
+        result = classifier(text, candidate_labels=[
+            "Politics", "Business", "Technology", "Sports", "Entertainment",
+            "Environment", "Health", "Science", "Crime", "Other"])
+        label = result['labels'][0]
+        category_cache[text] = label
+        return label
+    except:
+        return "Other"
+
+def generate_overview_for_verb(articles):
+    all_phrases = set()
+    for _, summary, _, _, _ in articles:
+        doc = nlp(summary)
+        for chunk in doc.noun_chunks:
+            text = chunk.text.strip()
+            words = text.split()
+            if 2 <= len(words) <= 5:
+                cleaned = re.sub(r'[^A-Za-z0-9\s]', '', text)
+                if cleaned.lower() not in blacklist:
+                    all_phrases.add(cleaned)
+    return ", ".join(list(all_phrases)[:6])
+
+
+def process_feed(feed_url):
+    print(f"📡 Parsing feed: {feed_url}")
+    feed = feedparser.parse(feed_url)
+    
+    # Wrap entries with tqdm for progress display
+    for entry in tqdm(feed.entries, desc=f"Processing entries from {urlparse(feed_url).netloc}"):
+        title = entry.get("title", "").strip()
+        link = entry.get("link", "").strip()
+        desc = clean_html(entry.get("summary", "")).strip()
+        
+        # print(f"📄 Title: {title}\n🔗 Link: {link}\n📝 Description word count: {len(desc.split())}")
+
+        pub = entry.get('published_parsed') or entry.get('updated_parsed')
+        if not pub:
+            continue
+
+        pub_date = datetime.fromtimestamp(time.mktime(pub))
+        if pub_date < time_limit:
+            continue
+
+        if not title or not link:
+            continue
+                # Skip if description is too short (less than 25 words)
+        if len(desc.split()) < 5:                             #Add it inside news_scraper.py
+            continue
+        # Your remaining processing logic here
+
+        summary_text = generate_summary(desc)
+        combined_text = f"{title}. {desc}"
+        verb_phrases = extract_verb_phrases(combined_text)
+        nouns = extract_nouns(combined_text)
+        # Prioritize verb phrases — if any exist, skip nouns
+        if link in processed_articles:
+           continue  # Skip if this article has already been added
+
+        if verb_phrases:
+            phrases = verb_phrases
+        else:
+            phrases = nouns
+        processed_articles.add(link)  # Mark this article as processed
+        category = classify_article(title, desc)
+        
+        for phrase in set(phrases):
+            if phrase not in phrase_to_articles:
+               seen_phrase_order.append(phrase)
+            phrase_to_articles[phrase].append((title, summary_text, link, pub_date, category))
+            global_phrase_counter[phrase] += 1
+
+
+print("⏳ Processing feeds...")
+with ThreadPoolExecutor(max_workers=5) as executor:
+    executor.map(process_feed, rss_feeds)
+
+# Excel Export
+print("📤 Writing to Excel...")
+wb = Workbook()
+ws1 = wb.active
+ws1.title = "Common Verb Phrases"
+ws1.append(["Keywords", "Article Title", "Summary", "Overview", "Category", "Article Link", "Published Date", "Published Time"])
+for cell in ws1["1:1"]:
+    cell.font = Font(bold=True)
+    
+global_seen_titles = set()
+
+# Get top 10 keywords only
+top_10_phrases = [phrase for phrase, _ in global_phrase_counter.most_common(10)]
+
+for phrase in seen_phrase_order:
+    if phrase not in top_10_phrases:
+        continue  # Skip non-top phrases
+
+    articles = phrase_to_articles[phrase]
+    if len(articles) >= 3:
+        for idx, (title, summary, link, pub_date, category) in enumerate(articles):
+            if title in global_seen_titles:
+                continue  # Skip duplicate title globally
+            global_seen_titles.add(title)
+
+            # Generate overview
+            doc = nlp(summary)
+            noun_phrases = [
+                chunk.text.strip()
+                for chunk in doc.noun_chunks
+                if 2 <= len(chunk.text.strip().split()) <= 5
+            ]
+            overview_text = ", ".join(noun_phrases[:6]) if noun_phrases else "N/A"
+
+            ws1.append([
+                phrase if idx == 0 else "",
+                title, summary, overview_text, category,
+                link, pub_date.strftime("%Y-%m-%d"), pub_date.strftime("%I:%M:%S %p")
+            ])
+        ws1.append(["", "", "", "", "", "", "", ""])  # Spacer row
+
+
+
+ws2 = wb.create_sheet("Trending Verb Phrases")
+ws2.append(["Verb Phrase", "Frequency"])
+for cell in ws2["1:1"]:
+    cell.font = Font(bold=True)
+
+for phrase, count in global_phrase_counter.most_common():
+    ws2.append([phrase, count])
+
+filename = f"Trendsfeed_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+wb.save(filename)
+print(f"✅ Excel saved as: {filename}")

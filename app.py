@@ -1,27 +1,46 @@
 from flask import Flask, jsonify, Response
 from flask_cors import CORS
 import json
+from collections import Counter
 
 app = Flask(__name__)
-CORS(app)# ✅ allow all origins
+CORS(app)  # ✅ allow all origins
 
-# Load data files once at startup
+# Load and process data files once at startup
 try:
-    with open("tags.json", encoding="utf-8") as f:
-        tags_data = json.load(f)
-
     with open("data.json", encoding="utf-8") as f:
-        article_data = json.load(f)
+        all_articles = json.load(f)
 
-    print("✅ JSON files loaded successfully.")
+    # Count frequency of each keyword
+    keyword_list = [a.get("keywords", "").strip() for a in all_articles if a.get("keywords")]
+    keyword_freq = Counter(keyword_list)
+
+    # Get top 10 keywords by frequency
+    top_keywords = [kw for kw, _ in keyword_freq.most_common(10)]
+
+    # Filter articles to include only those with top keywords
+    article_data = [
+        article for article in all_articles
+        if article.get("keywords", "").strip() in top_keywords
+    ]
+
+    # Sort articles by keyword frequency order
+    keyword_rank = {kw: i for i, kw in enumerate(top_keywords)}
+    article_data.sort(key=lambda x: keyword_rank.get(x.get("keywords", "").strip(), float("inf")))
+
+    # Generate tags_data from top keywords
+    tags_data = [{"id": i + 1, "Tag": kw} for i, kw in enumerate(top_keywords)]
+
+    # Map ID to Tag
+    id_to_tag = {tag["id"]: tag["Tag"] for tag in tags_data}
+
+    print("✅ JSON files loaded and processed by frequency.")
 
 except Exception as e:
     print("❌ Error loading JSON files:", e)
     tags_data = []
     article_data = []
-
-# Map ID to Tag name
-id_to_tag = {tag["id"]: tag["Tag"] for tag in tags_data if "id" in tag and "Tag" in tag}
+    id_to_tag = {}
 
 @app.route("/")
 def home():
@@ -39,7 +58,7 @@ def get_all_data():
 def get_articles_by_tag(tag_name):
     filtered = [
         article for article in article_data
-        if article.get("Keywords", "").lower() == tag_name.lower()
+        if article.get("keywords", "").strip().lower() == tag_name.lower()
     ]
     if not filtered:
         return jsonify({"message": f"No articles found for tag '{tag_name}'"}), 404
