@@ -3,7 +3,7 @@ from flask_cors import CORS
 import json
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:1337"])  # ✅ Allow CORS only from Strapi
+CORS(app)# ✅ allow all origins
 
 # Load data files once at startup
 try:
