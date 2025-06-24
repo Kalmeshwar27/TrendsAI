@@ -3,7 +3,7 @@ import json
 from collections import Counter
 
 # Load Excel
-df = pd.read_excel("data-2.xlsx")
+df = pd.read_excel("data-3.xlsx")
 
 # Clean column names
 df.columns = df.columns.str.strip()
