@@ -1,42 +1,42 @@
 [
   {
     "id": 1,
-    "Tag": "accused"
+    "Tag": "cancelled"
   },
   {
     "id": 2,
-    "Tag": "action"
+    "Tag": "warns"
   },
   {
     "id": 3,
-    "Tag": "agency"
+    "Tag": "increase"
   },
   {
     "id": 4,
-    "Tag": "agreement"
+    "Tag": "term"
   },
   {
     "id": 5,
-    "Tag": "andhra pradesh"
+    "Tag": "tour"
   },
   {
     "id": 6,
-    "Tag": "animal"
+    "Tag": "trade"
   },
   {
     "id": 7,
-    "Tag": "arrested"
+    "Tag": "board"
   },
   {
     "id": 8,
-    "Tag": "asserts"
+    "Tag": "power"
   },
   {
     "id": 9,
-    "Tag": "attack"
+    "Tag": "cut"
   },
   {
     "id": 10,
-    "Tag": "board"
+    "Tag": "policy"
   }
 ]

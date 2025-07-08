@@ -1,15 +1,13 @@
-from flask import Flask, jsonify, Response
+from flask import Flask, jsonify, Response 
 from flask_cors import CORS
 import json
 
-
 app = Flask(__name__)
-#regular expression pattern matching all routes
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)  #applies the CORS policy  using the flask-cors extension
+CORS(app)
 
 # Load data once at startup
 try:
-    with open("data.json", encoding="utf-8") as f:
+    with open("data1.json", encoding="utf-8") as f:
         all_articles = json.load(f)
 
     # Generate tag list from unique keywords
