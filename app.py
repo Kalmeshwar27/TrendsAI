@@ -1,45 +1,36 @@
 from flask import Flask, jsonify, Response
 from flask_cors import CORS
 import json
-from collections import Counter
+
 
 app = Flask(__name__)
-CORS(app)  # ✅ allow all origins
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
-# Load and process data files once at startup
+# Load data once at startup
 try:
     with open("data.json", encoding="utf-8") as f:
         all_articles = json.load(f)
 
-    # Count frequency of each keyword
-    keyword_list = [a.get("keywords", "").strip() for a in all_articles if a.get("keywords")]
-    keyword_freq = Counter(keyword_list)
+    # Generate tag list from unique keywords
+    tags_seen = {}
+    tags_data = []
+    id_to_tag = {}
 
-    # Get top 10 keywords by frequency
-    top_keywords = [kw for kw, _ in keyword_freq.most_common(10)]
+    tag_id = 1
+    for article in all_articles:
+        keyword = str(article.get("keywords", "")).strip()
+        if keyword and keyword not in tags_seen:
+            tags_seen[keyword] = tag_id
+            tags_data.append({"id": tag_id, "Tag": keyword})
+            id_to_tag[tag_id] = keyword
+            tag_id += 1
 
-    # Filter articles to include only those with top keywords
-    article_data = [
-        article for article in all_articles
-        if article.get("keywords", "").strip() in top_keywords
-    ]
-
-    # Sort articles by keyword frequency order
-    keyword_rank = {kw: i for i, kw in enumerate(top_keywords)}
-    article_data.sort(key=lambda x: keyword_rank.get(x.get("keywords", "").strip(), float("inf")))
-
-    # Generate tags_data from top keywords
-    tags_data = [{"id": i + 1, "Tag": kw} for i, kw in enumerate(top_keywords)]
-
-    # Map ID to Tag
-    id_to_tag = {tag["id"]: tag["Tag"] for tag in tags_data}
-
-    print("✅ JSON files loaded and processed by frequency.")
+    print("✅ Loaded existing JSON file successfully.")
 
 except Exception as e:
-    print("❌ Error loading JSON files:", e)
+    print("❌ Error loading JSON file:", e)
+    all_articles = []
     tags_data = []
-    article_data = []
     id_to_tag = {}
 
 @app.route("/")
@@ -52,13 +43,13 @@ def get_tags():
 
 @app.route("/data", methods=["GET"])
 def get_all_data():
-    return jsonify(article_data)
+    return jsonify(all_articles)
 
 @app.route("/tag/<tag_name>", methods=["GET"])
 def get_articles_by_tag(tag_name):
     filtered = [
-        article for article in article_data
-        if article.get("keywords", "").strip().lower() == tag_name.lower()
+        article for article in all_articles
+        if str(article.get("keywords", "")).strip().lower() == tag_name.lower()
     ]
     if not filtered:
         return jsonify({"message": f"No articles found for tag '{tag_name}'"}), 404
@@ -74,4 +65,4 @@ def get_articles_by_tag_id(tag_id):
 if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=port, debug=True)

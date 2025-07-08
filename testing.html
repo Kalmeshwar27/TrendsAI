@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Flask API CORS</title>
+</head>
+<body>
+  <h2>Testing Flask API CORS</h2>
+  <button onclick="fetchData()">Get Tags</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function fetchData() {
+      try {
+        const response = await fetch("http://localhost:5000/tags"); // Replace with your API URL if different
+        const data = await response.json();
+        document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        console.error("Error:", error);
+        document.getElementById("output").textContent = "❌ Failed to fetch data. See console.";
+      }
+    }
+  </script>
+</body>
+</html>
